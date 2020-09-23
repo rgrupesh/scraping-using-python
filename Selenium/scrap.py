@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 import time
 
 
@@ -16,9 +17,14 @@ password.send_keys("XXX")
 
 driver.find_element_by_xpath('//button[text()="Sign in"]').click()
 
-time.sleep(50)
+driver.get("https://www.google.com.np/")
 
-driver.quit()
+query = driver.find_element_by_name("q")
+query.send_keys('site:linkedin.com/in/ AND "deep learning"')
+query.send_keys(Keys.RETURN)
+
+
+
 
 
 
